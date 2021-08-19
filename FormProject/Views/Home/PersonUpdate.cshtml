@@ -1,0 +1,42 @@
+﻿@model PersonViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form method="post" asp-controller="Home" asp-action="PersonUpdate" enctype="multipart/form-data">
+        <input type="hidden" name="PersonId" value="@Model.PersonId" />
+        
+        <div class="containeredit">
+            <div class="inputs">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" class="form-control" >
+                
+                <br>
+                <label asp-for="Surname"></label>
+                <input asp-for="Surname" class="form-control"> 
+                <br>
+
+                <label asp-for="Age"></label>
+                <input asp-for="Age" class="form-control" >
+                <br>
+
+                <label asp-for="StartDate"></label>
+                <input asp-for="StartDate" class="form-control">
+                <button style="margin-left:170%" type="submit" class="btn btn-primary">Gönder</button>
+            </div>
+        </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿@model PersonsViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    @foreach (var item in Model.Persons)
+    {
+    <div class="container">
+        <p>@item.Name</p>
+        <br>
+        <p>@item.Surname</p>
+        <br>
+        <p>@item.Age</p>
+        <br>
+        <p>@item.StartDate</p>
+        <form action="/home/delete" method="post">
+            <input type="hidden" name="PersonId" value="@item.PersonId" />
+            <button style="margin-left:80%" type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        
+            <a style="margin-left:30%" href="/home/personupdate/@item.PersonId" value="@item.PersonId" class="btn btn-primary"  >UPDATE</a>
+        
+    </div>
+    <br>
+    }
+
+
+
+</body>
+</html>
